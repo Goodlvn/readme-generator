@@ -151,8 +151,6 @@ async function createMDFile (){
       await axios 
                 .get(queryUrl)
                 .then(function(r){
-                    
-                    console.log(r.data);
 
                     data.gitName = r.data.name;
             
