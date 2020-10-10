@@ -7,8 +7,6 @@
 
 This is a commandline app for busy developers who want to make an on the fly README.md document. All you have to do is install some prerequisites and then you will be able to answer the appropriate questions in your terminal so you can generate a great readme for your next project. 
 
-This project also introduced us to npm (node package manager). There is a lot of prewritten code that we can use to make really cool projects. I am excited to see wha the difference is in implementing npm dependancies and using a js or css library.
-
 ## Table of Contents
 
 * [Installation](#installation)
@@ -85,6 +83,7 @@ Before adding await to my axios call I was not able to get the valued from the c
 
 This homework assignment really stood out to me because it was our first one that had nothing to do with the browser. It was our first taste at backend programming. Although there is less instant gratification than is the case with more browser based code, it was really interesting to learn more about how flexible javascript. 
 
+This project also introduced us to npm (node package manager). There is a lot of prewritten code that we can use to make really cool projects. I am excited to see wha the difference is in implementing npm dependancies and using a js or css library.
 
 ## License
 
