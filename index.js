@@ -13,7 +13,7 @@ function promptQuestions () {
         {
             type: "ipnut",
             message: "What is your Github username?",
-            name: "user_name",
+            name: "username",
         },
         {
             type: "ipnut",
@@ -56,11 +56,9 @@ function promptQuestions () {
 
 function generateMD (data) {
 
-    console.log(data.project_liscense);
-
     let badge = "";
 
-    let githubLink = "https://github.com/" + data.user_name;
+    let githubLink = "https://github.com/" + data.username;
 
     if (data.project_liscense === "MIT") {
         badge = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
@@ -131,7 +129,7 @@ ${data.project_tests}
 
 ## Questions 
 
-If you have any questions about the repo, want to open an issue or contact me directly please reach out to ${data.user_email}. Check out more of my work at [Goodlvn](${githubLink}).
+If you have any questions about the repo, want to open an issue or contact me directly please reach out to ${data.user_email}. Check out more of my work at [${data.username}](${githubLink}).
 
 ![github profile picture](${data.avatar}=100x)
 `
@@ -148,25 +146,19 @@ async function createMDFile (){
         //using spread operator 
         let data = {...answers};
     
-        console.log("answers", data);
-    
-    
         const queryUrl = "https://api.github.com/users/" + data.username;
         
       await axios 
                 .get(queryUrl)
                 .then(function(r){
-                    console.log(r.data.name);
-            
+                    
+                    console.log(r.data);
+
                     data.gitName = r.data.name;
             
                     data.avatar = r.data.avatar_url;
             
                 });
-    
-        console.log(data);
-    
-    
     
         let markDown = await generateMD(data);
     
